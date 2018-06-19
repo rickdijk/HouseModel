@@ -17,17 +17,19 @@ namespace HouseModel
 
         public string Name { get; private set; }
 
-        public virtual string GetDescription()
-        {
-            string description = $"You’re standing in the {Name}. You see exits to the following places: ";
-            for (int i = 0; i < Exits.Length; i++)
+        public virtual string Description {
+            get
             {
-                description += $" {Exits[i].Name}";
-                if (i != Exits.Length - 1)
-                    description += ",";
+                string description = $"You’re standing in the {Name}. You see exits to the following places: ";
+                for (int i = 0; i < Exits.Length; i++)
+                {
+                    description += $" {Exits[i].Name}";
+                    if (i != Exits.Length - 1)
+                        description += ",";
+                }
+                description += ".";
+                return description;
             }
-            description += ".";
-            return description;
         }
     }
 }

@@ -8,27 +8,23 @@ namespace HouseModel
 {
     class Outside : Location
     {
-        public Outside(string name)
+        private bool hot;
+
+        public Outside(string name, bool hot)
             : base(name)
         {
+            this.hot = hot;
         }
 
-        private bool hot;
-        public bool Hot { get; }
-
-        public override string GetDescription()
+        public override string Description
         {
-            string description = $"You’re standing in the {Name}. You see exits to the following places: ";
-            for (int i = 0; i < Exits.Length; i++)
+            get
             {
-                description += $" {Exits[i].Name}";
-                if (i != Exits.Length - 1)
-                    description += ",";
+                string newDescription = base.Description;
+                if (hot)
+                    newDescription += " It’s very hot.";
+                return newDescription;
             }
-            description += ".";
-            if (hot)
-                description += " It's very hot here.";
-            return description;
         }
     }
 }

@@ -8,26 +8,19 @@ namespace HouseModel
 {
     class Room : Location
     {
-        public Room(string name)
+        private string decoration;
+
+        public Room(string name, string decoration)
             : base(name)
         {
-
+            this.decoration = decoration;
         }
 
-        private string decoration;
-        public string Decoration { get; set; }
-
-        public override string GetDescription()
-        {
-            string description = $"You’re standing in the {Name}. You see exits to the following places: ";
-            for (int i = 0; i < Exits.Length; i++)
+        public override string Description {
+            get
             {
-                description += $" {Exits[i].Name}";
-                if (i != Exits.Length - 1)
-                    description += ",";
+                return base.Description + $" You see {decoration}.";
             }
-            description += $". You see {decoration}";
-            return description;
         }
     }
 }
