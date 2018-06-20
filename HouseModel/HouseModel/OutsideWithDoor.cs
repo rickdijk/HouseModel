@@ -8,13 +8,21 @@ namespace HouseModel
 {
     class OutsideWithDoor : Outside, IHasExteriorDoor
     {
-        public OutsideWithDoor(string name)
-            : base(name)
+        public OutsideWithDoor(string name, string doorDescription, bool hot)
+            : base(name, hot)
         {
-
+            this.DoorDescription = doorDescription;
         }
 
-        public string DoorDescription { get; }
-        public string DoorLocation { get; set; }
+        public string DoorDescription { get; private set; }
+        public Location DoorLocation { get; set; }
+
+        public override string Description
+        {
+            get
+            {
+                return base.Description + $" You see {DoorDescription}.";
+            }
+        }
     }
 }

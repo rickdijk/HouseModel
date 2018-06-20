@@ -9,6 +9,6 @@ namespace HouseModel
     interface IHasExteriorDoor
     {
         string DoorDescription { get; }
-        string DoorLocation { get; }
+        Location DoorLocation { get; set; }
     }
 }
