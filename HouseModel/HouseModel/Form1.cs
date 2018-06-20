@@ -21,6 +21,11 @@ namespace HouseModel
         OutsideWithDoor backYard;
         Outside garden;
 
+        Room stairs;
+        RoomWithHidingPlace upstairsHallway;
+        RoomWithHidingPlace masterBedroom;
+        RoomWithHidingPlace secondBedroom;
+
         public Form1()
         {
             InitializeComponent();
