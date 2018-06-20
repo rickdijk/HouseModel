@@ -31,9 +31,8 @@ namespace HouseModel
         void CreateObjects()
         {
             livingRoom = new RoomWithDoor("Living Room",
-            "an antique carpet", "an oak door with a brass knob");
-            kitchen = new RoomWithDoor("Kitchen",
-                "stainless steel appliances", "a screen door");
+            "an antique carpet", "a closet", "an oak door with a brass knob");
+            kitchen = new RoomWithDoor("Kitchen", "stainless steel appliances", "a cabinet", "a screen door");
             diningRoom = new Room("Dining Room", "a crystal chandelier");
             frontYard = new OutsideWithDoor("Front Yard", "an oak door with a brass knob", false);
             backYard = new OutsideWithDoor("Back Yard", "a screen door", true);
