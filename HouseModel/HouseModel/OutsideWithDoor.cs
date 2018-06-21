@@ -8,7 +8,7 @@ namespace HouseModel
 {
     class OutsideWithDoor : Outside, IHasExteriorDoor
     {
-        public OutsideWithDoor(string name, string doorDescription, bool hot)
+        public OutsideWithDoor(string name, bool hot, string doorDescription )
             : base(name, hot)
         {
             this.DoorDescription = doorDescription;
